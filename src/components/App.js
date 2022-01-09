@@ -6,7 +6,7 @@ import { AuthProvider } from "../contexts/AuthContext"
 import './App.css'
 import Chats from "./Chats"
 import Login from "./Login"
-import HomeDisplay from "./Home"
+import Home from "./Home"
 
 function App() {
   return (
@@ -15,8 +15,9 @@ function App() {
         <AuthProvider>
           <Switch>
             <Route exact path="/chats" component={Chats} />
-            <Route path="/" component={Login}/>
-            <Route path="/home" exact={true} component={home}></Route>
+            <Route path="/login" component={Login}/>
+            <Route exact path="/" component={Home}></Route>
+            <Route path="/userlogin" component={UserLogin}></Route>
           
           </Switch>
         </AuthProvider>
@@ -24,9 +25,5 @@ function App() {
     </div>
   )
 }
-const home =({ match }) =>(
-  <div>
-    <HomeDisplay></HomeDisplay>
-  </div>
-)
+
 export default App
