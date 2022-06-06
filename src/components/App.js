@@ -7,6 +7,8 @@ import './App.css'
 import Chats from "./Chats"
 import Login from "./Login"
 import Home from "./Home"
+import UserLogin from "./UserLogin";
+import SigninForm from "./SigninForm";
 
 function App() {
   return (
@@ -18,7 +20,7 @@ function App() {
             <Route path="/login" component={Login}/>
             <Route exact path="/" component={Home}></Route>
             <Route path="/userlogin" component={UserLogin}></Route>
-          
+            <Route path="/usersignin" component={SigninForm}></Route>
           </Switch>
         </AuthProvider>
       </Router>

@@ -9,17 +9,13 @@ const Chats =()=>{
     const history = useHistory();
     const {user} = useAuth();
     const [loading, setLoading] = useState(true);
-    
-    console.log(user);
 
     const handleLogout = async () => {
-        
         history.push("/");
     }
 
     useEffect(()=>{
         if(!user){
-            
             history.push('/');
             return;
         }
@@ -45,12 +41,12 @@ const Chats =()=>{
                         }}
                     )
                     .then(()=>setLoading(false))
-                    .catch((error)=> console.log("hello"+error));
+                    .catch((error)=> console.log(error));
         
         })
+        .finally(()=> setLoading(false))
     },[user,history]);
 
-    //if(!user || loading) return 'loading';
     return(
         <div className="chats-page">
             <div className="nav-bar">
